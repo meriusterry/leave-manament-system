@@ -47,29 +47,7 @@
                        
                     </div>
                     
-                  
-                    <script>
-                        // JavaScript to toggle the side menu
-                        const menuButton = document.getElementById('menuButton');
-                        const sideMenu = document.getElementById('sideMenu');
-                        const closeMenuButton = document.getElementById('closeMenuButton');
-                        const settingsLink = document.getElementById('settingsLink');
-                        const settingsSubMenu = document.getElementById('settingsSubMenu');
-                    
-                        menuButton.addEventListener('click', () => {
-                            sideMenu.classList.add('translate-x-0');
-                        });
-                    
-                        closeMenuButton.addEventListener('click', () => {
-                            sideMenu.classList.remove('translate-x-0');
-                        });
-                    
-                        // Toggle submenu for Settings
-                        settingsLink.addEventListener('click', () => {
-                            settingsSubMenu.classList.toggle('hidden');
-                        });
-                    </script>
-                    
+                
                     </body>
                     </html>
 

@@ -1,11 +1,8 @@
 <x-app-layout>
    
-
-    <div class="flex">
-        
-            <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
-                <div class="p-4 text-gray-900 dark:text-gray-100">
-            <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm ">
+                <div class="p-4 text-gray-900 dark:text-gray-100 ">
+            <div class="grid grid-cols-2 gap-4 ">
 
                 <!-- Left half -->
                 <form class="space-y-2" action="{{ Route('createleavetypes.store') }}" method="POST">
@@ -63,7 +60,7 @@
                     <h1 class="text-2xl font-bold mb-2 ">Leave Types</h1>
                     <div class="flex space-x-4">
                         
-                        <div class="flex-grow ">
+                        <div class="flex ">
                             
                             <div class="mt-2"></div>
                             <table class="w-full divide-y divide-gray-300  ">
