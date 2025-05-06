@@ -1,20 +1,18 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            {{ __('Leave Management') }}
-        </h2>
-    </x-slot>
-
+  
     
     @vite('resources/css/app.css')
 </head>
 <body>
-<div class="py-6">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+    <div class="flex">
+        <!-- Main content -->
+        <main class="flex-1 p-0">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
+                <div class="bg-white shadow  p-6">
+   
             <div class="p-0 text-gray-900">
     
-                <button onclick="history.back()" class="bg-white-500 text-black font-bold py-0 px-0 rounded text-2xl hover:bg-gray-100">
+                <button onclick="history.back()" class="bg-white-500 text-black font-bold py-0 px-0  text-2xl hover:bg-gray-100">
                     < Back </button>
                     <hr class="my-4">
         <form class="space-y-2" action="{{ Route('admin.createuser') }}" method="POST">

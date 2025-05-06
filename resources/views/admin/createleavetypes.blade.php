@@ -1,14 +1,10 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            {{ __('Leave Management') }}
-        </h2>
+   
 
-    </x-slot>
-
-    <body class="bg-gray-100">
-    
-        <div class="container mx-auto px-0 py-8">
+    <div class="flex">
+        
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
+                <div class="p-4 text-gray-900 dark:text-gray-100">
             <div class="grid grid-cols-2 gap-4">
 
                 <!-- Left half -->
@@ -63,19 +59,17 @@
             </form>
                 
                 <!-- Right half -->
-                <div class="bg-white p-4 shadow-md ">
+                <div class="bg-white p-4 shadow-md  ">
                     <h1 class="text-2xl font-bold mb-2 ">Leave Types</h1>
                     <div class="flex space-x-4">
                         
                         <div class="flex-grow ">
                             
                             <div class="mt-2"></div>
-                            <table class="min-w-full divide-y divide-gray-300 ">
-                                <thead class="bg-gray-300 sm:rounded-lg">
+                            <table class="w-full divide-y divide-gray-300  ">
+                                <thead class="bg-gray-300 ">
                                     <tr>
-                                        <th scope="col"
-                                        class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
-                                        LEAVE #</th>
+                                       
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
                                             LEAVE TYPE</th>
@@ -99,8 +93,7 @@
                                     @foreach ($leaveType as $leaveType)
                                         <tr>
                                         
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                {{ $leaveType->id }}</td>
+                                            
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 {{ $leaveType->leave_type }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -114,7 +107,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <button  onclick="return confirmDeleteLeavetype()"
-                                                       class="py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                       class="py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                                         Delete
                                                     </button>
                                                     </form>

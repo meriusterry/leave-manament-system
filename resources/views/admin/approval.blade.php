@@ -1,22 +1,19 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            {{ __('Leave Management') }}
-        </h2>
-    </x-slot>
+ 
 
     <script src="{{ asset('js/javascript.js') }}"></script>
 
-    <div class="py-2">
-        <div class="max-w-7xl mx-auto sm:px-1 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm ">
-                <div class="p-6 bg-white border-b border-gray-200">
+    <div class="flex">
+        <!-- Main content -->
+        <main class="flex-1 p-0">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
+                <div class="p-4 text-gray-900 dark:text-gray-100">
 
                     <form action="{{ route('leaves.approval', $leave->id) }}" method="POST" style="display:inline;">
                         @csrf
 
                         <button onclick="history.back()"
-                            class="bg-white-500 text-black font-bold py-0 px-0 rounded text-2xl hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="bg-white-500 text-black font-bold py-0 px-0  text-2xl hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <-Back </button>
                                 <hr class="my-4">
                            
@@ -51,7 +48,7 @@
 
                                 <div class="flex justify-end space-x-4">
                                     <button  formaction= "{{ route('decline', $leave->id) }}" onclick="confirmDecline({{ $leave->id }})" 
-                                        class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         Decline
                                     </button>  
 
@@ -60,7 +57,7 @@
 
                                     <div>
                                         <button id="approveButton" type="submit"
-                                            class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                             Approve
                                         </button>
                                     </div>

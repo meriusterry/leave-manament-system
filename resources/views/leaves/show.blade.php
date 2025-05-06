@@ -1,16 +1,13 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-lg text-gray-800 leading-tight">
-            {{ __('Leave Management') }}
-        </h2>
-    </x-slot>
+ 
 
     <script src="{{ asset('js/javascript.js') }}"></script>
 
-    <div class="py-2">
-        <div class="max-w-7xl mx-auto sm:px-1 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm ">
-                <div class="p-6 bg-white border-b border-gray-200">
+    <div class="flex">
+        <!-- Main content -->
+        <main class="flex-1 p-0">
+            <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
+                <div class="p-4 text-gray-900 dark:text-gray-100">
 
                     <button onclick="history.back()" class="bg-white-500 text-black font-bold py-0 px-0 rounded text-2xl hover:bg-gray-100">
                         < Back </button>
@@ -55,12 +52,12 @@
                                         
                                         @if ($leave->status == 'Cancelled' || $leave->status == 'Approved' || $leave->status == 'Declined' )
                                         
-                                        <button type="submit"  class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-500 bg-gray-300 cursor-not-allowed">
+                                        <button type="submit"  class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-gray-500 bg-gray-300 cursor-not-allowed">
                                             Cancel Leave
                                         </button>
                                         
                                     @else
-                                    <button type="submit"  onclick="return confirmCancel()"class="py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"">
+                                    <button type="submit"  onclick="return confirmCancel()"class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"">
                                         Cancel Leave
                                     </button>
                                     @endif
@@ -75,12 +72,12 @@
 
                                 @if ($leave->status == 'Approved' || $leave->status == 'Declined')
                                     <span
-                                        class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-500 bg-gray-300 cursor-not-allowed">
+                                        class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-gray-500 bg-gray-300 cursor-not-allowed">
                                         Edit Leave
                                     </span>
                                 @else
                                     <a href="{{ route('leaves.edit', $leave->id) }}"
-                                        class="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         Edit Leave
                                     </a>
                                 @endif

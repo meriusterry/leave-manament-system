@@ -17,4 +17,5 @@ class Holidays extends Model
         'day',
 
     ];
+
 }

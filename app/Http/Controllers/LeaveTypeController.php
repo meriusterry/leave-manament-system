@@ -57,4 +57,6 @@ class LeaveTypeController extends Controller
             return redirect()->route('admin.createleavetypes')->with('error', 'Leave Type not found.');
         }
     }
+
+
 }

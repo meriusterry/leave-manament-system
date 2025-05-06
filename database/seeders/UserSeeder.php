@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'surname' => 'Ntuli',
             'mobileNumber' => '0762478940',
             'department' => 'IT',
-            'position' => 'Developer',
+            'position' => 'Software Developer',
             'customerType' => 'Business',
             'status' => 'Active',
             'access' => 'True',

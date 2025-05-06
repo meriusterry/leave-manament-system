@@ -1,14 +1,14 @@
         <!-- Flash Messages -->
         <div class="fixed top-0 right-0 m-16">
             @if(session('success'))
-                <div class="bg-green-400 text-white p-4 rounded shadow-lg mb-2" id="flash-message">
+                <div class="bg-green-400 text-white p-4  shadow-lg mb-2" id="flash-message">
                     {{ session('success') }}
                 </div>
             @endif
 
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
-                    <div class="bg-red-400 text-white p-5 rounded shadow-lg mb-2" id="flash-message">
+                    <div class="bg-red-400 text-white p-5  shadow-lg mb-2" id="flash-message">
                         {{ $error }}
                     </div>
                 @endforeach
@@ -44,55 +44,7 @@
                             </svg>
                         </button>
                     
-                        <!-- Side Menu (Hidden by default) -->
-                        <div id="sideMenu" class="fixed inset-y-0 left-0 w-64 bg-gray-800 transform -translate-x-full ease-in-out transition-all duration-300">
-                            <div class="flex justify-end p-4">
-                                <a href="{{ route('leaves.dashboard') }}">
-                                <div class=" mb-2 mr-12">
-                                    
-                                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-40">
-                                </div>
-                            </a>
-
-
-                                <button id="closeMenuButton" class="text-white focus:outline-none">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                </button>
-                                
-                            </div>
-                            
-                            @if (auth()->user() && auth()->user()->access === 'True')
-                            <nav class="mt-2">
-                                <hr class="my-2">
-                                <a href="{{ route('leaves.dashboard') }}" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Dashboard</a>
-                                <hr class="my-2">
-                                
-                                <a href="#" class="block py-2 px-4 text-sm text-white hover:bg-gray-700" id="settingsLink">Settings</a>
-                                
-                                 <!-- Submenu for Settings (Initially hidden) -->
-                            <nav id="settingsSubMenu" class="hidden ml-4"> <!-- Added ml-4 for left margin and hidden class -->
-                                <a href="{{ route('admin.users') }}" class="block py-2 px-4 text-sm text-gray-400 hover:text-white hover:bg-gray-700">Users</a>
-                                <a href="{{ route('admin.createleavetypes') }}" class="block py-2 px-4 text-sm text-gray-400 hover:text-white hover:bg-gray-700">Leave Types</a>
-                                <a href="{{ route('admin.holidays') }}" class="block py-2 px-4 text-sm text-gray-400 hover:text-white hover:bg-gray-700">Holidays</a>
-                            </nav>
-                                <!-- End of Submenu -->
-
-                               
-                            </nav>
-                            @else
-                            <nav class="mt-2">
-                                <hr class="my-4">
-                                <a href="{{ route('leaves.dashboard') }}" class="block py-2 px-4 text-sm text-white hover:bg-gray-700">Dashboard</a>
-                               
-                                <hr class="my-4">
-
-                               
-                                <!-- Add more links as needed -->
-                            </nav>
-                                    @endif
-                        </div>
+                       
                     </div>
                     
                   
