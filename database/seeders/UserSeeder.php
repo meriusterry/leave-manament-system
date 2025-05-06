@@ -14,9 +14,9 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'firstName' => 'Terry', // Example values for initial user
-            'surname' => 'Ntuli',
-            'mobileNumber' => '0762478940',
+            'firstName' => 'Admin', // Example values for initial user
+            'surname' => 'Control',
+            'mobileNumber' => '0799999999',
             'department' => 'IT',
             'position' => 'Software Developer',
             'customerType' => 'Business',
