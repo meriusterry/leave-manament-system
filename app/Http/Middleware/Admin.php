@@ -16,10 +16,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check() && Auth::user()->access != 'True' )
-        {
-          return redirect('dashboard')  ;
+        if (!Auth::check() || Auth::user()->access !== 'True') {
+            return redirect()->route('leaves.dashboard')->with('error', 'You are not authorized to access this page.');
         }
+
         return $next($request);
     }
 
