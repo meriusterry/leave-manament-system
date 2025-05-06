@@ -50,37 +50,36 @@
                                        
                                           
                                         
-                                        @if ($leave->status == 'Cancelled' || $leave->status == 'Approved' || $leave->status == 'Declined' )
-                                        
-                                        <button type="submit"  class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-gray-500 bg-gray-300 cursor-not-allowed">
-                                            Cancel Leave
-                                        </button>
-                                        
-                                    @else
-                                    <button type="submit"  onclick="return confirmCancel()"class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"">
-                                        Cancel Leave
-                                    </button>
-                                    @endif
-                                    </form>
+                                     
+                                        @if ($leave->status != 'Cancelled' && $leave->status != 'Approved' && $leave->status != 'Declined')
+    <button type="submit" onclick="return confirmCancel()"
+        class="py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Cancel Leave
+    </button>
+@endif
 
-                                    <script>
-                                        function confirmCancel() {
-                                             return confirm('Are you sure you want to cancel this leave?');
-                                            }
-                                    </script>
+</form>
 
+<script>
+    function confirmCancel() {
+        return confirm('Are you sure you want to cancel this leave?');
+    }
+</script>
 
-                                @if ($leave->status == 'Approved' || $leave->status == 'Declined')
-                                    <span
-                                        class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-gray-500 bg-gray-300 cursor-not-allowed">
-                                        Edit Leave
-                                    </span>
-                                @else
-                                    <a href="{{ route('leaves.edit', $leave->id) }}"
-                                        class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                        Edit Leave
-                                    </a>
-                                @endif
+@if ($leave->status != 'Approved' && $leave->status != 'Declined')
+    <a href="{{ route('leaves.edit', $leave->id) }}"
+        class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Edit Leave
+    </a>
+@endif
+
+{{-- 🟡 Message for non-editable leaves --}}
+@if (in_array($leave->status, ['Cancelled', 'Approved', 'Declined']))
+    <p class="mt-4 text-sm text-red-600 font-semibold">
+        Attended leaves cannot be updated or cancelled.
+    </p>
+@endif
+
 
                             </div>
 
