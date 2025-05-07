@@ -7,9 +7,18 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
+
+
 <body class="flex items-center justify-center h-screen bg-white-90">
+
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
 
+        <div class="bg-red-500 border-l-4 border-red-500 text-white p-4 mb-2" role="alert">
+            <p class="font-bold">Notice</p>
+            <p>Sign-up is disabled. Only administrators can add new users.</p>
+        </div>
+        
+        
         <div class="flex justify-center mb-4">
             <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-40">
         </div>
