@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use App\Models\UserLeaveBalance;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
 
 class LeaveManagementController extends Controller
 {
@@ -23,15 +22,15 @@ class LeaveManagementController extends Controller
             $query->where('status', $request->status);
         }
 
-    // Search by firstName, surname, or position (case-insensitive)
-if ($request->filled('search')) {
-    $searchTerm = strtolower($request->search);
-    $query->whereHas('user', function ($q) use ($searchTerm) {
-        $q->where(DB::raw('LOWER(firstName)'), 'like', '%' . $searchTerm . '%')
-            ->orWhere(DB::raw('LOWER(surname)'), 'like', '%' . $searchTerm . '%')
-            ->orWhere(DB::raw('LOWER(position)'), 'like', '%' . $searchTerm . '%');
-    });
-}
+        // Search by firstName, surname, or position
+        if ($request->filled('search')) {
+            $searchTerm = $request->search;
+            $query->whereHas('user', function ($q) use ($searchTerm) {
+                $q->where('firstName', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('surname', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('position', 'like', '%' . $searchTerm . '%');
+            });
+        }
 
         $tableData = $query->orderBy('created_at', 'desc')->paginate(10)->appends($request->all());
 
