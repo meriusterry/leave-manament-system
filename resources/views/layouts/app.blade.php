@@ -25,7 +25,7 @@
             </div>
             @if (auth()->user() && auth()->user()->access === 'True')
             <nav class="space-y-2 mt-4">
-                <div class="border-b border-gray-300 my-4 mt-16"></div>
+                <div class="border-b border-gray-300 my-4 mt-2"></div>
         
                 <!-- Home -->
                 <a href="{{ route('leaves.dashboard') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
