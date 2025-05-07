@@ -13,17 +13,42 @@ use Illuminate\Support\Facades\Mail;
 
 class LeaveManagementController extends Controller
 {
-    public function data()
+    public function data(Request $request)
     {
-        //Fetch  all leaves on the database
-        $tableData = Leave::where('status', '!=', 'Cancelled')->orderBy('created_at', 'desc')->paginate(10);
+        $query = Leave::where('status', '!=', 'Cancelled')->with('user');
+
+        // Filter by status if selected
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+
+        // Search by firstName, surname, or position
+        if ($request->filled('search')) {
+            $searchTerm = $request->search;
+            $query->whereHas('user', function ($q) use ($searchTerm) {
+                $q->where('firstName', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('surname', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('position', 'like', '%' . $searchTerm . '%');
+            });
+        }
+
+        $tableData = $query->orderBy('created_at', 'desc')->paginate(10)->appends($request->all());
+
+        // Summary Cards
         $total = Leave::where('status', '!=', 'Cancelled')->count();
-        $pendingapproval = Leave::where('status', 'Pending Approval')->count();
+        $pendingapproval = Leave::where('status', 'Pending')->count();
         $approved = Leave::where('status', 'Approved')->count();
         $declined = Leave::where('status', 'Declined')->count();
 
-        return view('admin.dashboard', compact('tableData', 'total', 'pendingapproval', 'approved', 'declined'));
+        return view('admin.dashboard', compact(
+            'tableData',
+            'total',
+            'pendingapproval',
+            'approved',
+            'declined'
+        ));
     }
+
 
     public function approval(string $id)
     {

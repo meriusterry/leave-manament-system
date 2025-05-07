@@ -19,29 +19,29 @@
                            
                                 <div class="grid grid-cols-2 gap-5 mb-10 text-gray-700">
                                     <div>
-                                        <p class="font-semibold">EMPLOYEE ID</p>
+                                        <p class="font-bold text-gray-900">EMPLOYEE ID</p>
                                         <p>{{ $leave->user_id }} </p>
                                     </div>
                                     <div>
-                                        <p class="font-semibold">LEAVE TYPE</p>
+                                        <p class="font-bold text-gray-900">LEAVE TYPE</p>
                                         <p>{{ $leave->leave_types }}</p>
                                     </div>
                                     <div>
-                                        <p class="font-semibold">DURATION</p>
+                                        <p class="font-bold text-gray-900">DURATION</p>
                                         <p> {{ $leave->start_date }} to {{ $leave->end_date }}<br/>
                                             {{ $leave->date_difference }}day(s)
                                         </p>
                                     </div>
                                     <div> 
-                                        <p class="font-semibold">APPLIED ON</p>
+                                        <p class="font-bold text-gray-900">APPLIED ON</p>
                                         <p> {{ $leave->created_at }}</p>
                                     </div>
                                     <div>
-                                        <p class="font-semibold">STATUS</p>
+                                        <p class="font-bold text-gray-900">STATUS</p>
                                         <p>{{ $leave->status }}</p>
                                     </div>
                                     <div>
-                                        <p class="font-semibold">DESCRIPTION</p>
+                                        <p class="font-bold text-gray-900">DESCRIPTION</p>
                                         <p> {{ $leave->description }}</p>
                                     </div>
                                 </div>

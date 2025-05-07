@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'customerType' => 'Business',
             'status' => 'Active',
             'access' => 'True',
-            'email' => 'admin@example.com', // Change this to the desired email
+            'email' => 'meriusterry@gmail.com', // Change this to the desired email
             'password' => bcrypt('Admin@123'), // Change this to the desired password
         ]);
     }

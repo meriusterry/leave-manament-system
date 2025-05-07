@@ -20,11 +20,22 @@ class LeaveController extends Controller
 {
     public function index()
     {
-        // Fetch leaves created by the logged-in user
-        $tableData = Auth::user()->leaves()->where('status', '!=', 'Cancelled')->orderBy('created_at', 'desc')->paginate(10);
+        $query = Auth::user()->leaves()->orderBy('created_at', 'desc');
+    
+        // Apply filter if a status is selected
+        if (request('status') !== null && request('status') !== '') {
+            $query->where('status', request('status'));
+        } else {
+            $query->where('status', '!=', 'Cancelled');
+        }
+    
+        $tableData = $query->paginate(10);
+    
         $leaveBalances = Auth::user()->leaveBalances()->with('leaveType')->get();
+    
         return view('leaves.dashboard', compact('tableData', 'leaveBalances'));
     }
+    
 
     /**
      * Show the form for creating a new resource.

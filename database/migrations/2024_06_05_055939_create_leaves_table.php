@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('end_date'); 
             $table->integer('date_difference');
             $table->string('description');
-            $table->string('status')->default('Pending Approval');;
+            $table->string('status')->default('Pending');;
             $table->timestamps();
             $table->string('reason')->nullable();
         });
