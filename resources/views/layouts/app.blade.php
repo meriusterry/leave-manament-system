@@ -16,91 +16,103 @@
 <body class="font-sans antialiased">
     <div class="flex min-h-screen bg-gray-100">
 
-        {{-- Sidebar --}}
-        <aside class="bg-gray-950 text-white w-60 p-4">
-            <div class="logo text-xl font-semibold mb-8 flex items-center gap-2">
-                <div class="flex justify-center mb-0">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-80 h-12">
-                </div>
-            </div>
-            @if (auth()->user() && auth()->user()->access === 'True')
-            <nav class="space-y-2 mt-4">
-                <div class="border-b border-gray-300 my-4 mt-2"></div>
-        
-                <!-- Home -->
-                <a href="{{ route('leaves.dashboard') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <!-- Home Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-                    </svg>
-                    Home
-                </a>
-        
-                <!-- Users -->
-                <a href="{{ route('admin.users') }}" class="block px-4 py-2 hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <!-- Users Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M17 20h5v-2a4 4 0 0 0-5-3.87M9 20H4v-2a4 4 0 0 1 5-3.87m6-2.13a4 4 0 1 0-6 0m6 0a4 4 0 1 1-6 0"/>
-                    </svg>
-                    Users
-                </a>
-        
-                <!-- Leave Types -->
-                <a href="{{ route('admin.createleavetypes') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <!-- Clipboard Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M9 2a1 1 0 0 0-1 1v1H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 18.5 4H16V3a1 1 0 0 0-1-1H9z" />
-                    </svg>
-                    Leave Types
-                </a>
-        
-                <!-- Holidays -->
-                <a href="{{ route('admin.holidays') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <!-- Calendar Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
-                    </svg>
-                    Holidays
-                </a>
-        
-                <!-- Approval -->
-                <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <!-- Check Badge Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M9 12l2 2l4-4M12 2a10 10 0 1 1-7.07 2.93A10 10 0 0 1 12 2z"/>
-                    </svg>
-                    Approval
-                </a>
-        
-                <!-- My Leaves -->
-                <a href="{{ route('leaves.dashboard') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                    <!-- Document Text Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M8 16h8M8 12h8m-6 4h6m2-10H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
-                    </svg>
-                    My Leaves
-                </a>
-            </nav>
-            @else
-            <!-- Non-admin view -->
-            <a href="{{ route('leaves.dashboard') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                <!-- Home Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
-                Home
-            </a>
-            <a href="{{ route('leaves.dashboard') }}" class="block px-4 py-2  hover:bg-gray-700 transition-colors flex items-center gap-2">
-                <!-- Document Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M8 16h8M8 12h8m-6 4h6m2-10H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
-                </svg>
-                My Leaves
-            </a>
-            @endif
-        </aside>
+       {{-- Sidebar --}}
+<aside class="bg-gray-950 text-white w-60 p-4">
+    <div class="logo text-xl font-semibold mb-8 flex items-center gap-2">
+        <div class="flex justify-center mb-0">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-80 h-12">
+        </div>
+    </div>
+
+    @if (auth()->user() && auth()->user()->access === 'True')
+    <nav class="space-y-2 mt-4">
+        <div class="border-b border-gray-300 my-4 mt-2"></div>
+
+        <!-- Home -->
+        <a href="{{ route('leaves.dashboard') }}"
+           class="block px-4 py-2 transition-colors flex items-center gap-2
+           {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            Home
+        </a>
+
+        <!-- Users -->
+        <a href="{{ route('admin.users') }}"
+           class="block px-4 py-2 transition-colors flex items-center gap-2
+           {{ request()->routeIs('admin.users') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M17 20h5v-2a4 4 0 0 0-5-3.87M9 20H4v-2a4 4 0 0 1 5-3.87m6-2.13a4 4 0 1 0-6 0m6 0a4 4 0 1 1-6 0"/>
+            </svg>
+            Users
+        </a>
+
+        <!-- Leave Types -->
+        <a href="{{ route('admin.createleavetypes') }}"
+           class="block px-4 py-2 transition-colors flex items-center gap-2
+           {{ request()->routeIs('admin.createleavetypes') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M9 2a1 1 0 0 0-1 1v1H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 18.5 4H16V3a1 1 0 0 0-1-1H9z" />
+            </svg>
+            Leave Types
+        </a>
+
+        <!-- Holidays -->
+        <a href="{{ route('admin.holidays') }}"
+           class="block px-4 py-2 transition-colors flex items-center gap-2
+           {{ request()->routeIs('admin.holidays') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
+            </svg>
+            Holidays
+        </a>
+
+        <!-- Approval -->
+        <a href="{{ route('admin.dashboard') }}"
+           class="block px-4 py-2 transition-colors flex items-center gap-2
+           {{ request()->routeIs('admin.dashboard') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M9 12l2 2l4-4M12 2a10 10 0 1 1-7.07 2.93A10 10 0 0 1 12 2z"/>
+            </svg>
+            Approval
+        </a>
+
+        <!-- My Leaves -->
+        <a href="{{ route('leaves.dashboard') }}"
+           class="block px-4 py-2 transition-colors flex items-center gap-2
+           {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M8 16h8M8 12h8m-6 4h6m2-10H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            </svg>
+            My Leaves
+        </a>
+    </nav>
+
+    @else
+    <!-- Non-admin view -->
+    <a href="{{ route('leaves.dashboard') }}"
+       class="block px-4 py-2 transition-colors flex items-center gap-2
+       {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        Home
+    </a>
+
+    <a href="{{ route('leaves.dashboard') }}"
+       class="block px-4 py-2 transition-colors flex items-center gap-2
+       {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-800' : 'hover:bg-gray-700' }}">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M8 16h8M8 12h8m-6 4h6m2-10H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+        </svg>
+        My Leaves
+    </a>
+    @endif
+</aside>
+
         
         {{-- Main Content --}}
         <div class="flex-1 flex flex-col">

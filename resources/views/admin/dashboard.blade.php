@@ -70,7 +70,7 @@
                                 @endif
 
                                 <button type="submit"
-                                    class="bg-indigo-600 text-white text-sm px-4 py-2 hover:bg-indigo-700">
+                                    class="inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-300">
                                     Search
                                 </button>
                             </form>

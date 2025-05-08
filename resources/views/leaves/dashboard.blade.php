@@ -49,7 +49,7 @@
 
                         {{-- Create Leave Button --}}
                         <a href="{{ route('leaves.create') }}"
-                            class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            class="inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-200">
                             Create Leave
                         </a>
                     </div>

@@ -10,7 +10,7 @@
             {{-- Create User Button --}}
             <div class="flex justify-end mb-4">
                 <a href="{{ route('admin.createuser') }}"
-                   class="inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                   class="inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-200">
                     Create User
                 </a>
             </div>
@@ -50,7 +50,7 @@
                                                 @csrf
                                                 <button type="submit" onclick="return confirmBlock();"
                                                     class="px-3 py-1 text-sm bg-red-600 text-white  hover:bg-red-700">
-                                                    Block 
+                                                    Block Permission
                                                 </button>
                                             </form>
                                         @else
@@ -58,7 +58,7 @@
                                                 @csrf
                                                 <button type="submit" onclick="return confirmAccess();"
                                                     class="px-3 py-1 text-sm bg-green-600 text-white  hover:bg-green-700">
-                                                    Allow 
+                                                    Allow Permission
                                                 </button>
                                             </form>
                                             <form method="POST" action="{{ route('destroyuser', $data->id) }}">
