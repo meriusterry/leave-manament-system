@@ -57,29 +57,32 @@
                 
                 <!-- Right half -->
                 <div class="bg-white p-4 shadow-md  ">
-                    <h1 class="text-2xl font-bold mb-2 ">Leave Types</h1>
+                    <h1 class="text-xl font-bold mb-2 ">Leave Types</h1>
                     <div class="flex space-x-4">
                         
                         <div class="flex ">
                             
                             <div class="mt-2"></div>
-                            <table class="w-full divide-y divide-gray-300  ">
-                                <thead class="bg-gray-300 ">
+                            <div class="mt-2 overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-600">
+                                    <thead class="bg-gray-900 text-white">
                                     <tr>
-                                       
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
-                                            LEAVE TYPE</th>
+                                        class="px-4 py-2 font-medium">
+                                        Leave#</th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
-                                            ENTITLEMENT</th>
+                                            class="px-4 py-2 font-medium">
+                                            Leave Type</th>
+                                        <th scope="col"
+                                            class="px-4 py-2 font-medium">
+                                            Entitlement</th>
                                             <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
-                                            BALANCE</th>
+                                            class="px-4 py-2 font-medium">
+                                            Balance</th>
                                             
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider">
-                                            ACTION</th>
+                                            class="px-4 py-2 font-medium">
+                                            Action</th>
                                        
                                             
                                     </tr>
@@ -90,7 +93,8 @@
                                     @foreach ($leaveType as $leaveType)
                                         <tr>
                                         
-                                            
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                {{ $leaveType->id }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 {{ $leaveType->leave_type }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">

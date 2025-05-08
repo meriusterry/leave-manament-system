@@ -45,7 +45,7 @@
                             <form method="GET" class="flex items-center gap-2">
                                 <label for="status" class="font-medium">Filter by Status:</label>
                                 <select name="status" id="status" onchange="this.form.submit()"
-                                    class="border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-1">
+                                    class="border-gray-400 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-1">
                                     <option value="">-- All --</option>
                                     <option value="Pending"
                                         {{ request('status') == 'Pending' ? 'selected' : '' }}>Pending</option>
@@ -82,7 +82,7 @@
                         <!-- Leave Table -->
                         <div class="overflow-x-auto">
                             <table class="min-w-full table-auto text-sm text-left text-gray-600">
-                                <thead class="bg-gray-100 text-gray-900">
+                                <thead class="bg-gray-900 text-white">
                                     <tr>
                                         <th class="px-4 py-2 font-medium">Employee#</th>
                                         <th class="px-4 py-2 font-medium">Employee Name</th>
@@ -142,7 +142,7 @@
 
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <a href="{{ route('admin.approval', ['id' => $data->id]) }}"
-                                                    class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                                     View</a>
                                             </td>
 

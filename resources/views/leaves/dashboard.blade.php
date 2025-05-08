@@ -14,9 +14,16 @@
                     @else
                         <div class="flex flex-wrap gap-2 mb-4">
                             @foreach ($leaveBalances as $data)
-                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1">
-                                    {{ $data->leave_type }}: {{ $data->balance }} Day(s)
-                                </span>
+                                
+
+
+                                <a href="#"
+                                class="bg-green-100 text-gray-700 p-2 shadow-sm block transition">
+                                <div class="text-sm font-semibold"></div>
+                                <div class="text-sm font-bold">{{ $data->leave_type }}: {{ $data->balance }} Day(s)</div>
+                            </a>
+
+
                             @endforeach
                         </div>
                     @endif
@@ -50,7 +57,7 @@
                     {{-- Leave Table --}}
                     <div class="overflow-x-auto">
                         <table class="min-w-full table-auto text-sm text-left text-gray-600">
-                            <thead class="bg-gray-100 text-gray-900">
+                            <thead class="bg-gray-900 text-white">
                                 <tr>
                                     <th class="px-4 py-2 font-medium  ">Employee#</th>
                                     <th class="px-4 py-2 font-medium  ">Leave Type</th>

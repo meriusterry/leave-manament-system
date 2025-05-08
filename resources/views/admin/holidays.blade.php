@@ -116,15 +116,15 @@
         </div>
 
         <!-- Holiday Table -->
-        <div class="bg-white shadow overflow-hidden">
-            <table class="w-full divide-y divide-gray-200">
-                <thead class="bg-gray-100 text-left text-sm font-medium text-gray-900">
+        <div class="overflow-x-auto">
+            <table class="min-w-full table-auto text-sm text-left text-gray-600">
+                <thead class="bg-gray-900 text-white">
                     <tr>
-                        <th class="px-6 py-3">#</th>
-                        <th class="px-6 py-3">Date</th>
-                        <th class="px-6 py-3">Holiday</th>
-                        <th class="px-6 py-3">Day</th>
-                        <th class="px-6 py-3">Actions</th>
+                        <th class="px-4 py-2 font-medium">#</th>
+                        <th class="px-4 py-2 font-medium">Date</th>
+                        <th class="px-4 py-2 font-medium">Holiday</th>
+                        <th class="px-4 py-2 font-medium">Day</th>
+                        <th class="px-4 py-2 font-medium">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-100 text-sm text-gray-700">

@@ -17,7 +17,7 @@
     <div class="flex min-h-screen bg-gray-100">
 
         {{-- Sidebar --}}
-        <aside class="bg-gray-800 text-white w-64 p-4">
+        <aside class="bg-gray-950 text-white w-60 p-4">
             <div class="logo text-xl font-semibold mb-8 flex items-center gap-2">
                 <div class="flex justify-center mb-0">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-80 h-12">

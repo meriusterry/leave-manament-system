@@ -18,7 +18,7 @@
             {{-- Users Table --}}
             <div class="overflow-x-auto">
                 <table class="min-w-full table-auto text-sm text-left text-gray-600">
-                    <thead class="bg-gray-100 text-gray-900">
+                    <thead class="bg-gray-900 text-white">
                         <tr>
                             <th class="px-4 py-2 font-medium">Employee#</th>
                             <th class="px-4 py-2 font-medium">Employee Name</th>
