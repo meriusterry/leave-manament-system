@@ -55,7 +55,7 @@
                 </div>
             </form>
         </div>
-
+        <h1 class="text-xl font-bold mb-2 ">Holidays</h1>
         <!-- Add Holiday Button -->
         <div class="flex justify-end mb-4">
             <a href="#" id="showFormButton"

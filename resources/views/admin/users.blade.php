@@ -6,6 +6,7 @@
         <main class="flex-1 p-0">
             <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
                 <div class="p-4 text-gray-900 dark:text-gray-100">
+                    <h1 class="text-xl font-bold mb-2 ">Users</h1>
                     <div class="flex justify-end items-center gap-x-4 mb-2">
                         <!-- Filter by Access -->
                         <form method="GET" class="flex items-center gap-2">
