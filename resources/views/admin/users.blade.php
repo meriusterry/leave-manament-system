@@ -10,7 +10,7 @@
             {{-- Create User Button --}}
             <div class="flex justify-end mb-4">
                 <a href="{{ route('admin.createuser') }}"
-                   class="inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-200">
+                   class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                     Create User
                 </a>
             </div>
@@ -49,7 +49,7 @@
                                             <form method="POST" action="{{ route('blockaccess', $data->id) }}">
                                                 @csrf
                                                 <button type="submit" onclick="return confirmBlock();"
-                                                    class="px-3 py-1 text-sm bg-red-600 text-white  hover:bg-red-700">
+                                                    class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                                                     Block Permission
                                                 </button>
                                             </form>
@@ -57,7 +57,7 @@
                                             <form method="POST" action="{{ route('giveaccess', $data->id) }}">
                                                 @csrf
                                                 <button type="submit" onclick="return confirmAccess();"
-                                                    class="px-3 py-1 text-sm bg-green-600 text-white  hover:bg-green-700">
+                                                    class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                                                     Allow Permission
                                                 </button>
                                             </form>
@@ -65,7 +65,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" onclick="return confirmDeleteUser();"
-                                                    class="px-3 py-1 text-sm bg-white border border-gray-300  hover:bg-gray-100">
+                                                    class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                                                     Delete
                                                 </button>
                                             </form>

@@ -53,7 +53,7 @@
                                      
                                         @if ($leave->status != 'Cancelled' && $leave->status != 'Approved' && $leave->status != 'Declined')
     <button type="submit" onclick="return confirmCancel()"
-        class="inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-200">
+        class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
         Cancel Leave
     </button>
 @endif
@@ -68,7 +68,7 @@
 
 @if ($leave->status != 'Approved' && $leave->status != 'Declined')
     <a href="{{ route('leaves.edit', $leave->id) }}"
-        class="inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-200">
+        class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
         Edit Leave
     </a>
 @endif

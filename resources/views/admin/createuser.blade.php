@@ -28,6 +28,7 @@
                     <div class="text-red-600 text-sm">{{ $message }}</div>
                 @enderror
                 </div>
+                
 
                 <div class="form-group w-1/2">
                     <label for="surname" class="block mb-2 text-sm font-medium text-gray-700">Surname</label>
@@ -102,7 +103,7 @@
                
             </div>
 
-            <button type="submit" class="w-full inline-block px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 hover:bg-gray-200">
+            <button type="submit" class="w-full py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                 CREATE</button>
         </form>
     </div>

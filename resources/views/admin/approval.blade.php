@@ -48,7 +48,7 @@
 
                                 <div class="flex justify-end space-x-4">
                                     <button  formaction= "{{ route('decline', $leave->id) }}" onclick="confirmDecline({{ $leave->id }})" 
-                                        class="py-2 px-4 border border-transparent  shadow-sm text-sm font-medium text-white bg-red-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                                         Decline
                                     </button>  
 
@@ -57,7 +57,7 @@
 
                                     <div>
                                         <button id="approveButton" type="submit"
-                                            class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
                                             Approve
                                         </button>
                                     </div>
