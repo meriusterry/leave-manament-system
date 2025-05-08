@@ -58,10 +58,24 @@ class UsersController extends Controller
 
     public function data()
     {
-        //Fetch  all Users members from the database
-        $tableData = User::orderBy('created_at', 'desc')->paginate(10);
+        $tableData = User::query()
+            ->when(request('search'), function ($query) {
+                $query->where(function ($q) {
+                    $q->where('firstName', 'like', '%' . request('search') . '%')
+                      ->orWhere('surname', 'like', '%' . request('search') . '%')
+                      ->orWhere('position', 'like', '%' . request('search') . '%');
+                });
+            })
+            ->when(request('access'), function ($query) {
+                $query->where('access', request('access'));
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+    
         return view('admin.users', compact('tableData'));
     }
+    
+
 
 
     public function giveaccess($id, Request $request)

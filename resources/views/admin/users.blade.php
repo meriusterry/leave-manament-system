@@ -6,14 +6,45 @@
         <main class="flex-1 p-0">
             <div class="bg-white dark:bg-white overflow-hidden shadow-sm">
                 <div class="p-4 text-gray-900 dark:text-gray-100">
+                    <div class="flex justify-end items-center gap-x-4 mb-2">
+                        <!-- Filter by Access -->
+                        <form method="GET" class="flex items-center gap-2">
+                            <label for="access" class="font-medium">Filter by Permissions:</label>
+                            <select name="access" id="access" onchange="this.form.submit()"
+                                class="border-gray-400 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 py-1">
+                                <option value="">-- All --</option>
+                                <option value="True" {{ request('access') == 'True' ? 'selected' : '' }}>True</option>
+                                <option value="False" {{ request('access') == 'False' ? 'selected' : '' }}>False</option>
+                            </select>
+                        </form>
+                    
+                        <!-- Search Form -->
+                        <form method="GET" class="flex items-center gap-2">
+                            <input type="text" name="search" value="{{ request('search') }}"
+    placeholder="Search by Name or position"
+    class="border-gray-400 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-60 px-3 py-1" />
 
+                    
+                            @if (request('search') || request('access'))
+                                <a href="{{ route('admin.users') }}"
+                                    class="text-sm text-gray-700 underline hover:text-red-600">Reset</a>
+                            @endif
+                    
+                            <button type="submit"
+                                class="py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
+                                Search
+                            </button>
+                        </form>
+                        
+                            <a href="{{ route('admin.createuser') }}"
+                               class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
+                                Create User
+                            </a>
+                        
+                    </div>
+                    
             {{-- Create User Button --}}
-            <div class="flex justify-end mb-4">
-                <a href="{{ route('admin.createuser') }}"
-                   class="py-2 px-4 border border-gray-300  shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500">
-                    Create User
-                </a>
-            </div>
+            
 
             {{-- Users Table --}}
             <div class="overflow-x-auto">
