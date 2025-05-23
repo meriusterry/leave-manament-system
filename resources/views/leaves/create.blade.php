@@ -15,22 +15,24 @@
                 <h2 class="text-lg text-gray-900 mt-2 font-bold">Create Leave</h2>
                
                 <form id="create" class="mt-4 space-y-4" method="post" action="{{ route('leaves.create') }}">
-                    <div>
-                        @csrf
-                        <label for="leave_types" class="block text-sm font-medium text-gray-700">Leave Types</label>
-                        <select id="leave_types" name="leave_types"
-                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white  shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            value="{{ old('leave_types') }}" required autocomplete="leave_types" autofocus>
-                            <option disabled selected>Select Leave Type</option>
-                            @foreach ($leaveTypes as $leaveType)
-                            <option value="{{ $leaveType->leave_type }}">{{ $leaveType->leave_type }}</option>
-                        @endforeach
-                        </select>
-                        @error('leave_types')
-                        <div class="text-red-600 text-sm">{{ $message }}</div>
-                    @enderror
+                   <div>
+    @csrf
+    <label for="leave_types" class="block text-sm font-medium text-gray-700">Leave Types</label>
+    <select id="leave_types" name="leave_types"
+        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        required autocomplete="leave_types" autofocus>
+        <option disabled {{ old('leave_types') ? '' : 'selected' }}>Select Leave Type</option>
+        @foreach ($leaveTypes as $leaveType)
+            <option value="{{ $leaveType->leave_type }}" {{ old('leave_types') == $leaveType->leave_type ? 'selected' : '' }}>
+                {{ $leaveType->leave_type }}
+            </option>
+        @endforeach
+    </select>
+    @error('leave_types')
+        <div class="text-red-600 text-sm">{{ $message }}</div>
+    @enderror
+</div>
 
-                    </div>
 
                     <div class="flex items-center space-x-8 ">
                         <div>

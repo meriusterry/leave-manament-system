@@ -10,15 +10,25 @@
         
                 <div class="bg-white p-4  w-4/4">
                     <h2 class="text-xl font-bold mb-4 ">Add Leave Types</h2>
-                    <div class="form-group w-4/4">
-                        <label for="leavetypes" class="block mb-2 text-sm font-medium text-gray-700">Leave Type</label>
-                        <input type="text" id="leave_type" name="leave_type" placeholder="eg.Sick"  class="w-full px-3 py-2 border border-gray-300  shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        value="{{ old('leave_type') }}" required autocomplete="leave_type" autofocus >
-                        @error('leave_type')
-                        <div class="text-red-600 text-sm">{{ $message }}</div>
-                    @enderror 
-        
-                    </div>
+                <div class="form-group w-4/4">
+    <label for="leave_type" class="block mb-2 text-sm font-medium text-gray-700">Leave Type</label>
+    <select id="leave_type" name="leave_type" class="w-full px-3 py-2 border border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autofocus>
+        <option value="" disabled selected>Select a leave type</option>
+        <option value="Annual Leave" {{ old('leave_type') == 'Annual Leave' ? 'selected' : '' }}>Annual Leave</option>
+        <option value="Sick Leave" {{ old('leave_type') == 'Sick Leave' ? 'selected' : '' }}>Sick Leave</option>
+        <option value="Maternity Leave" {{ old('leave_type') == 'Maternity Leave' ? 'selected' : '' }}>Maternity Leave</option>
+        <option value="Parental Leave" {{ old('leave_type') == 'Parental Leave' ? 'selected' : '' }}>Parental Leave</option>
+        <option value="Family Responsibility Leave" {{ old('leave_type') == 'Family Responsibility Leave' ? 'selected' : '' }}>Family Responsibility Leave</option>
+        <option value="Unpaid Leave" {{ old('leave_type') == 'Unpaid Leave' ? 'selected' : '' }}>Unpaid Leave</option>
+        <option value="Study Leave" {{ old('leave_type') == 'Study Leave' ? 'selected' : '' }}>Study Leave</option>
+        <option value="Religious Leave" {{ old('leave_type') == 'Religious Leave' ? 'selected' : '' }}>Religious Leave</option>
+        <option value="Injury on Duty Leave" {{ old('leave_type') == 'Injury on Duty Leave' ? 'selected' : '' }}>Injury on Duty Leave</option>
+    </select>
+    @error('leave_type')
+        <div class="text-red-600 text-sm">{{ $message }}</div>
+    @enderror
+</div>
+
 
                     <div class="flex space-x-4 mb-4 mt-4">
                         <div class="form-group w-3/4">
