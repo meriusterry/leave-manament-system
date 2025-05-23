@@ -18,11 +18,9 @@
         <option value="Sick Leave" {{ old('leave_type') == 'Sick Leave' ? 'selected' : '' }}>Sick Leave</option>
         <option value="Maternity Leave" {{ old('leave_type') == 'Maternity Leave' ? 'selected' : '' }}>Maternity Leave</option>
         <option value="Parental Leave" {{ old('leave_type') == 'Parental Leave' ? 'selected' : '' }}>Parental Leave</option>
-        <option value="Family Responsibility Leave" {{ old('leave_type') == 'Family Responsibility Leave' ? 'selected' : '' }}>Family Responsibility Leave</option>
         <option value="Unpaid Leave" {{ old('leave_type') == 'Unpaid Leave' ? 'selected' : '' }}>Unpaid Leave</option>
         <option value="Study Leave" {{ old('leave_type') == 'Study Leave' ? 'selected' : '' }}>Study Leave</option>
         <option value="Religious Leave" {{ old('leave_type') == 'Religious Leave' ? 'selected' : '' }}>Religious Leave</option>
-        <option value="Injury on Duty Leave" {{ old('leave_type') == 'Injury on Duty Leave' ? 'selected' : '' }}>Injury on Duty Leave</option>
     </select>
     @error('leave_type')
         <div class="text-red-600 text-sm">{{ $message }}</div>
