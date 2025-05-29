@@ -3,7 +3,7 @@
 
         <main class="flex-1 p-0">
           
-            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-8 ">
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4 ">
                 <div class="bg-white rounded-md shadow-md p-4 flex flex-col justify-between">
                     <h2 class="text-lg font-semibold text-gray-700 mb-2">Total Leaves</h2>
                     <div class="text-2xl font-bold text-gray-800">#</div>
@@ -12,7 +12,7 @@
                 <div class="bg-white rounded-md shadow-md p-4 flex flex-col justify-between">
                     <h2 class="text-lg font-semibold text-gray-700 mb-2">Pending Leaves</h2>
                     <div class="text-2xl font-bold text-gray-800">#</div>
-                    <a href="#" class="text-blue-500 hover:underline text-sm mt-4">ViewPending Leaves</a>
+                    <a href="#" class="text-blue-500 hover:underline text-sm mt-4">View Pending Leaves</a>
                 </div>
                 <div class="bg-white rounded-md shadow-md p-4 flex flex-col justify-between">
                     <h2 class="text-lg font-semibold text-gray-700 mb-2">Approved Leaves  </h2>
