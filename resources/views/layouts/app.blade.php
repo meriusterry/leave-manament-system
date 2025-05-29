@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-    <div class="flex min-h-screen bg-gray-100">
+    <div class="flex min-h-screen bg-gray-50">
 
        {{-- Sidebar --}}
 <aside class="bg-white text-black w-60 p-4">
@@ -31,21 +31,20 @@
         <!-- Home -->
         <a href="{{ route('home') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('home') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('home') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
             Home
-            
         </a>
-         
+
         <!-- Users -->
         <a href="{{ route('admin.users') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('admin.users') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('admin.users') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M17 20h5v-2a4 4 0 0 0-5-3.87M9 20H4v-2a4 4 0 0 1 5-3.87m6-2.13a4 4 0 1 0-6 0m6 0a4 4 0 1 1-6 0"/>
+                <path d="M17 20h5v-2a4 4 0 0 0-5-3.87M9 20H4v-2a4 4 0 0 1-5-3.87m6-2.13a4 4 0 1 0-6 0m6 0a4 4 0 1 1-6 0"/>
             </svg>
             Users
         </a>
@@ -53,7 +52,7 @@
         <!-- Leave Types -->
         <a href="{{ route('admin.createleavetypes') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('admin.createleavetypes') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('admin.createleavetypes') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M9 2a1 1 0 0 0-1 1v1H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 18.5 4H16V3a1 1 0 0 0-1-1H9z" />
             </svg>
@@ -63,7 +62,7 @@
         <!-- Holidays -->
         <a href="{{ route('admin.holidays') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('admin.holidays') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('admin.holidays') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/>
             </svg>
@@ -73,7 +72,7 @@
         <!-- Approval -->
         <a href="{{ route('admin.dashboard') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('admin.dashboard') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('admin.dashboard') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M9 12l2 2l4-4M12 2a10 10 0 1 1-7.07 2.93A10 10 0 0 1 12 2z"/>
             </svg>
@@ -83,7 +82,7 @@
         <!-- My Leaves -->
         <a href="{{ route('leaves.dashboard') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M8 16h8M8 12h8m-6 4h6m2-10H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
             </svg>
@@ -95,7 +94,7 @@
     <!-- Non-admin view -->
     <a href="{{ route('leaves.dashboard') }}"
        class="block px-4 py-2 transition-colors flex items-center gap-2
-       {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+       {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
@@ -105,7 +104,7 @@
 
     <a href="{{ route('leaves.dashboard') }}"
        class="block px-4 py-2 transition-colors flex items-center gap-2
-       {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+       {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600 text-white' : 'hover:bg-gray-700' }}">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path d="M8 16h8M8 12h8m-6 4h6m2-10H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
         </svg>
@@ -113,6 +112,7 @@
     </a>
     @endif
 </aside>
+
 
         
         {{-- Main Content --}}
