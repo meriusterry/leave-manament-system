@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Mail;
 
 class LeaveManagementController extends Controller
 {
+
+     public function index()
+    {
+        // This will load resources/views/admin/home.blade.php
+        return view('admin.home');
+    }
+    
     public function data(Request $request)
     {
         $query = Leave::where('status', '!=', 'Cancelled')->with('user');

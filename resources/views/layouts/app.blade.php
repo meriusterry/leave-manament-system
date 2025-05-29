@@ -29,9 +29,9 @@
         <div class="border-b border-gray-300 my-4 mt-2"></div>
 
         <!-- Home -->
-        <a href="{{ route('leaves.dashboard') }}"
+        <a href="{{ route('home') }}"
            class="block px-4 py-2 transition-colors flex items-center gap-2
-           {{ request()->routeIs('leaves.dashboard') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
+           {{ request()->routeIs('home') ? 'bg-gray-600' : 'hover:bg-gray-700' }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>

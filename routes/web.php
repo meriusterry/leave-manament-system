@@ -62,11 +62,17 @@ Route::middleware('auth')->group(function () {
         Route::post('/holidays', [HolidayController::class, 'store'])->name('holidays.store');
         Route::patch('/updateHoliday', [HolidayController::class, 'updateHoliday'])->name('updateHoliday');
         Route::get('/holidays/{id}/edit', [HolidayController::class, 'editJson']);
+
+
+        Route::get('/home', [LeaveManagementController::class, 'index'])->name('home');
+
+
     });
 
     // Shared by all authenticated users (admin or not)
     Route::get('/fetch-holidays', [HolidayController::class, 'fetchHolidays'])->name('fetch-holidays');
     Route::post('/update-leave-balance/{leaveTypeId}', [\App\Http\Controllers\LeaveBalanceController::class, 'updateLeaveBalance'])->name('leave-balance.update');
+
 });
 
 require __DIR__ . '/auth.php';
